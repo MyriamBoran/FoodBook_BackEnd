@@ -35,6 +35,12 @@ Login using Auth0
 
 Receive email with shopping list after adding missing ingredients to profile.
 
-Stephen Gibson
+Contributors:
 
-Mark King
+Stephen Gibson,
+
+Mark King,
+
+Myriam Boran,
+
+Amy Edwardson.
