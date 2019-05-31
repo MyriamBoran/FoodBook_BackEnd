@@ -6,7 +6,6 @@ MVP
 
 Create a recipe finder where users can:
 
-
 Search for recipes filtering by ingredients
 
  View recipe image, ingredients and method
