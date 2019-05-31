@@ -34,3 +34,5 @@ Login using Auth0
 - View nutrition info - protein, carbs, fat (charts/graphs)
 
 Receive email with shopping list after adding missing ingredients to profile.
+
+Stephen Gibson
