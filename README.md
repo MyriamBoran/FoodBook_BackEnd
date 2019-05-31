@@ -36,3 +36,5 @@ Login using Auth0
 Receive email with shopping list after adding missing ingredients to profile.
 
 Stephen Gibson
+
+Mark King
