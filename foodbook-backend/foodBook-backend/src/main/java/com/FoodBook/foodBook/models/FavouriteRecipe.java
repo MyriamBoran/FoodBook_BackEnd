@@ -11,12 +11,17 @@ public class FavouriteRecipe {
     @Column(name="id")
     private Long id;
 
-    @Column(name="user_id")
-    private Long user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    public FavouriteRecipe(Long user_id){
+    @Column(name="name")
+    private String name;
+
+    public FavouriteRecipe(User user, String name){
         this.id = id;
-        this.user_id = user_id;
+        this.user = user;
+        this.name = name;
     }
 
     public FavouriteRecipe() {
@@ -30,11 +35,19 @@ public class FavouriteRecipe {
         this.id = id;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
