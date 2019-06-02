@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class FoodBookApplicationTests {
@@ -37,5 +39,11 @@ public class FoodBookApplicationTests {
 		FavouriteRecipe goulash = new FavouriteRecipe(mary, "Goulash");
 		userRepository.save(mary);
 		favouriteRecipeRepository.save(goulash);
+	}
+
+	@Test
+	public void getFavouriteRecipesById() {
+		
+		assertEquals("Goulash", userRepository.getFavouriteRecipesById(1L));
 	}
 }
