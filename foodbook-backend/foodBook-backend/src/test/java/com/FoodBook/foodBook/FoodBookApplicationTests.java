@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -43,7 +45,7 @@ public class FoodBookApplicationTests {
 
 	@Test
 	public void getFavouriteRecipesById() {
-		
-		assertEquals("Goulash", userRepository.getFavouriteRecipesById(1L));
+		List<FavouriteRecipe> found = favouriteRecipeRepository.getFavouriteRecipesById(1L);
+		assertEquals("Goulash", found.get(0).getName());
 	}
 }

@@ -1,6 +1,7 @@
 package com.FoodBook.foodBook.controllers;
 
 import com.FoodBook.foodBook.models.FavouriteRecipe;
+import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository;
 import com.FoodBook.foodBook.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +16,11 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    FavouriteRecipeRepository favouriteRecipeRepository;
+
     @GetMapping("/{id}/favourite-recipes")
     public List<FavouriteRecipe> getFavouriteRecipesById(Long id){
-        return userRepository.getFavouriteRecipesById(id);
+        return favouriteRecipeRepository.getFavouriteRecipesById(id);
     }
 }
