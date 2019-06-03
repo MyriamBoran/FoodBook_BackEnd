@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.net.URLEncoder;
 
@@ -11,22 +12,28 @@ import java.net.URLEncoder;
 public class Recipe {
 
     private String uri;
+
     private String label;
+
     private String image;
+
     private String url;
+
     private List<String> healthLabels;
+
     private List<String> ingredientLines;
+
     private double calories;
+
     private int totalTime;
 
-    public Recipe(String uri, String label, String image, String url, List<String> healthLabels,
-                  List<String> ingredientLines, double calories, int totalTime) {
+    public Recipe(String uri, String label, String image, String url, double calories, int totalTime) {
         this.uri = uri;
         this.label = label;
         this.image = image;
         this.url = url;
-        this.healthLabels = healthLabels;
-        this.ingredientLines = ingredientLines;
+        this.healthLabels = new ArrayList<>();
+        this.ingredientLines = new ArrayList<>();
         this.calories = calories;
         this.totalTime = totalTime;
     }
@@ -98,4 +105,8 @@ public class Recipe {
         this.totalTime = totalTime;
     }
 
+    @Override
+    public String toString() {
+        return "Recipe [uri=" + uri + "]";
+    }
 }

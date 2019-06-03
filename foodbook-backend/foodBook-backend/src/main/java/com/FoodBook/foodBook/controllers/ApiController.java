@@ -18,8 +18,9 @@ public class ApiController {
 @GetMapping(value="/search/{query}")
 public RecipeList getRecipesBySearchQuery(@PathVariable String query){
     RestTemplate restTemplate = new RestTemplate();
-    ResponseEntity<RecipeList> recipes = restTemplate.getForEntity("https://api.edamam.com/search?q="
+    ResponseEntity<RecipeList> response = restTemplate.getForEntity("https://api.edamam.com/search?q="
             + query + "&app_id=4bbe4d45&app_key=ef61c2a3e3911a1085638fb0a3bb5cc9", RecipeList.class);
-    return recipes.getBody();
+    System.out.println(response.getBody());
+    return response.getBody();
 }
 }
