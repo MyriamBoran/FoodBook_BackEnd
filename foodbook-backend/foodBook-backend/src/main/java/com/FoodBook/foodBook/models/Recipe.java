@@ -1,7 +1,6 @@
 package com.FoodBook.foodBook.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -40,6 +39,7 @@ public class Recipe {
 
     public Recipe() {
     }
+
 
     public String getUri() {
         return uri;
@@ -105,8 +105,5 @@ public class Recipe {
         this.totalTime = totalTime;
     }
 
-    @Override
-    public String toString() {
-        return "Recipe [uri=" + uri + "]";
-    }
+
 }
