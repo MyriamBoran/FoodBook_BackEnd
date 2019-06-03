@@ -1,4 +1,4 @@
-package com.FoodBook.foodBook.repositories;
+package com.FoodBook.foodBook.repositories.FavouriteRecipeRepository;
 
 import com.FoodBook.foodBook.models.FavouriteRecipe;
 import org.springframework.data.jpa.repository.JpaRepository;
