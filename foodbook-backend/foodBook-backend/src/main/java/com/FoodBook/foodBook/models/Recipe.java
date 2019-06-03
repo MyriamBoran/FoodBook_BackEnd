@@ -3,36 +3,58 @@ package com.FoodBook.foodBook.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.net.URLEncoder;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Recipe {
 
+    @JsonProperty("uri")
     private String uri;
+
+    @JsonProperty("label")
     private String label;
+
+    @JsonProperty
     private String image;
+
+    @JsonProperty
     private String url;
+
+    @JsonProperty
     private List<String> healthLabels;
+
+    @JsonProperty
     private List<String> ingredientLines;
+
+    @JsonProperty
     private double calories;
+
+    @JsonProperty
     private int totalTime;
 
-    public Recipe(String uri, String label, String image, String url, List<String> healthLabels,
-                  List<String> ingredientLines, double calories, int totalTime) {
+    @JsonProperty
+    private RecipeList recipeList;
+
+    public Recipe(String uri, String label, String image, String url,
+                  double calories, int totalTime, RecipeList recipeList) {
         this.uri = uri;
         this.label = label;
         this.image = image;
         this.url = url;
-        this.healthLabels = healthLabels;
-        this.ingredientLines = ingredientLines;
+        this.healthLabels = new ArrayList<>();
+        this.ingredientLines = new ArrayList<>();
         this.calories = calories;
         this.totalTime = totalTime;
+        this.recipeList = recipeList;
     }
 
     public Recipe() {
     }
+
 
     public String getUri() {
         return uri;
@@ -96,6 +118,14 @@ public class Recipe {
 
     public void setTotalTime(int totalTime) {
         this.totalTime = totalTime;
+    }
+
+    public RecipeList getRecipeList() {
+        return recipeList;
+    }
+
+    public void setRecipeList(RecipeList recipeList) {
+        this.recipeList = recipeList;
     }
 
 }

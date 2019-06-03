@@ -1,21 +1,21 @@
 package com.FoodBook.foodBook.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name="RecipeList")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RecipeList {
 
+    @JsonProperty
     private String q;
 
+    @JsonProperty
     private List<Recipe> hits;
+
 
     public RecipeList(String q) {
         this.q = q;
