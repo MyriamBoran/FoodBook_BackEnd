@@ -2,8 +2,10 @@ package com.FoodBook.foodBook;
 
 import com.FoodBook.foodBook.models.FavouriteRecipe;
 import com.FoodBook.foodBook.models.User;
-import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository;
-import com.FoodBook.foodBook.repositories.UserRepository;
+
+
+import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository.FavouriteRecipeRepository;
+import com.FoodBook.foodBook.repositories.UserRepository.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

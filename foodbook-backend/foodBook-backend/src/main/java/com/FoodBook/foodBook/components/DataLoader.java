@@ -1,7 +1,8 @@
 package com.FoodBook.foodBook.components;
 
-import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository;
-import com.FoodBook.foodBook.repositories.UserRepository;
+
+import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository.FavouriteRecipeRepository;
+import com.FoodBook.foodBook.repositories.UserRepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,14 +17,13 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     FavouriteRecipeRepository favouriteRecipeRepository;
 
-//    add recipe repository to be filled by API request?
 
     public DataLoader() {
 
     }
 
     public void run(ApplicationArguments args) {
-//        API request here?
+//
     }
 
 
