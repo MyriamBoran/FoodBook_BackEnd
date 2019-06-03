@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class FoodBookApplicationTests {
@@ -27,8 +31,8 @@ public class FoodBookApplicationTests {
 
 	@Test
 	public void createUser(){
-		User mary = new User();
-		userRepository.save(mary);
+		User donald = new User("Donald", "Duck");
+		userRepository.save(donald);
 	}
 
 	@Test
@@ -37,5 +41,11 @@ public class FoodBookApplicationTests {
 		FavouriteRecipe goulash = new FavouriteRecipe(mary, "Goulash");
 		userRepository.save(mary);
 		favouriteRecipeRepository.save(goulash);
+	}
+
+	@Test
+	public void getFavouriteRecipesById() {
+		List<FavouriteRecipe> found = favouriteRecipeRepository.getFavouriteRecipesById(1L);
+		assertEquals("Goulash", found.get(0).getName());
 	}
 }
