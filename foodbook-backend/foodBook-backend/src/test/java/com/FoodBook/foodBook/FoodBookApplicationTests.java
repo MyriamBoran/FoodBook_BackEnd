@@ -31,8 +31,8 @@ public class FoodBookApplicationTests {
 
 	@Test
 	public void createUser(){
-		User mary = new User();
-		userRepository.save(mary);
+		User donald = new User("Donald", "Duck");
+		userRepository.save(donald);
 	}
 
 	@Test
