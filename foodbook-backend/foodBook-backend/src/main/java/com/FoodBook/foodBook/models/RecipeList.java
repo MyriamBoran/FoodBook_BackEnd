@@ -3,11 +3,16 @@ package com.FoodBook.foodBook.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="RecipeList")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RecipeList {
+
     private String q;
 
     private List<Recipe> hits;
