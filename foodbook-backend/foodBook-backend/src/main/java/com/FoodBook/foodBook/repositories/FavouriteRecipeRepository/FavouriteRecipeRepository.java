@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FavouriteRecipeRepository extends JpaRepository<FavouriteRecipe, String> {
-    List<FavouriteRecipe> getFavouriteRecipesById(String id);
+public interface FavouriteRecipeRepository extends JpaRepository<FavouriteRecipe, Long> {
+    List<FavouriteRecipe> findFavouriteRecipesById(String id);
+    List<FavouriteRecipe> findByUserId(String id);
 }

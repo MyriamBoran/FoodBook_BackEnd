@@ -1,5 +1,8 @@
 package com.FoodBook.foodBook.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +15,7 @@ public class FavouriteRecipe {
     private Long id;
 
     @ManyToOne
+//    @JsonIgnoreProperties
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

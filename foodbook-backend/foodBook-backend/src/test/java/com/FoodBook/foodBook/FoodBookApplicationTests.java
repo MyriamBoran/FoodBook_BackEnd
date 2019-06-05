@@ -46,8 +46,8 @@ public class FoodBookApplicationTests {
 	}
 
 	@Test
-	public void getFavouriteRecipesById() {
-		List<FavouriteRecipe> found = favouriteRecipeRepository.getFavouriteRecipesById("Test");
-		assertEquals("Goulash", found.get(0).getName());
+	public void getFavouriteRecipesByUserId() {
+//		List<FavouriteRecipe> found = favouriteRecipeRepository.findByUser("google-oauth2|111821480876092721989");
+//		assertEquals(17, found.size());
 	}
 }

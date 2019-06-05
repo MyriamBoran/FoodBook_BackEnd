@@ -6,6 +6,7 @@ import com.FoodBook.foodBook.repositories.FavouriteRecipeRepository.FavouriteRec
 import com.FoodBook.foodBook.repositories.UserRepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,8 @@ public class UserController {
     FavouriteRecipeRepository favouriteRecipeRepository;
 
     @GetMapping("/{id}/favourite-recipes")
-    public List<FavouriteRecipe> getFavouriteRecipesById(String id){
-        return favouriteRecipeRepository.getFavouriteRecipesById(id);
+    public FavouriteRecipe getFavouriteRecipes(@PathVariable String id){
+        System.out.println(id);
+        return userRepository.findFavouriteRecipes(id).get(0);
     }
 }
