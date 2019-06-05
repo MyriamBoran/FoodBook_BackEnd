@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class FavouriteRecipe {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private Long id;
 
@@ -15,24 +15,26 @@ public class FavouriteRecipe {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Column(name="recipe_uri", nullable = false)
+    private String recipeUri;
+
     @Column(name="name")
     private String name;
 
-    public FavouriteRecipe(User user, String name){
-        this.id = id;
+
+
+    public FavouriteRecipe(User user, String name, String recipeUri){
         this.user = user;
         this.name = name;
+        this.recipeUri = recipeUri;
     }
 
     public FavouriteRecipe() {
     }
 
+
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public User getUser() {
@@ -49,5 +51,17 @@ public class FavouriteRecipe {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getRecipeUri() {
+        return recipeUri;
+    }
+
+    public void setRecipeUri(String recipeUri) {
+        this.recipeUri = recipeUri;
     }
 }

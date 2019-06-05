@@ -21,7 +21,7 @@ public class UserController {
     FavouriteRecipeRepository favouriteRecipeRepository;
 
     @GetMapping("/{id}/favourite-recipes")
-    public List<FavouriteRecipe> getFavouriteRecipesById(Long id){
+    public List<FavouriteRecipe> getFavouriteRecipesById(String id){
         return favouriteRecipeRepository.getFavouriteRecipesById(id);
     }
 }

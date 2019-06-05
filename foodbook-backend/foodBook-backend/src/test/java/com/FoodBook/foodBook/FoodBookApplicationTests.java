@@ -39,15 +39,15 @@ public class FoodBookApplicationTests {
 
 	@Test
 	public void createFavouriteRecipe() {
-		User mary = new User("Maria", "Simmons");
-		FavouriteRecipe goulash = new FavouriteRecipe(mary, "Goulash");
-		userRepository.save(mary);
-		favouriteRecipeRepository.save(goulash);
+//		User mary = new User("Maria", "Simmons");
+//		FavouriteRecipe goulash = new FavouriteRecipe(mary, "Goulash");
+//		userRepository.save(mary);
+//		favouriteRecipeRepository.save(goulash);
 	}
 
 	@Test
 	public void getFavouriteRecipesById() {
-		List<FavouriteRecipe> found = favouriteRecipeRepository.getFavouriteRecipesById(1L);
+		List<FavouriteRecipe> found = favouriteRecipeRepository.getFavouriteRecipesById("Test");
 		assertEquals("Goulash", found.get(0).getName());
 	}
 }

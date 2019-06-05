@@ -9,9 +9,8 @@ import java.util.List;
 public class User {
 
         @Id
-        @GeneratedValue(strategy= GenerationType.IDENTITY)
         @Column(name = "id")
-        private Long id;
+        private String id;
 
         @Column(name="first_name")
         private String firstName;
@@ -32,11 +31,11 @@ public class User {
     public User() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
